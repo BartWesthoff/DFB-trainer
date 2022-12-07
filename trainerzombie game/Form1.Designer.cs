@@ -29,46 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ammoBox = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.godmodeBox = new System.Windows.Forms.CheckBox();
             this.setRoundButton = new System.Windows.Forms.Button();
             this.roundUpDown = new System.Windows.Forms.NumericUpDown();
-            this.maxRoundButton = new System.Windows.Forms.Button();
+            this.AmmoButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pointsBox = new System.Windows.Forms.CheckBox();
-            this.secondAmmoBox = new System.Windows.Forms.CheckBox();
-            this.throwablesBox = new System.Windows.Forms.CheckBox();
             this.cButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.roundLabel = new System.Windows.Forms.Label();
+            this.throwableButton = new System.Windows.Forms.Button();
+            this.freezePointsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.roundUpDown)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ammoBox
-            // 
-            this.ammoBox.AutoSize = true;
-            this.ammoBox.Location = new System.Drawing.Point(23, 19);
-            this.ammoBox.Name = "ammoBox";
-            this.ammoBox.Size = new System.Drawing.Size(141, 24);
-            this.ammoBox.TabIndex = 0;
-            this.ammoBox.Text = "unlimited ammo";
-            this.ammoBox.UseVisualStyleBackColor = true;
             // 
             // timer1
             // 
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(720, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
             // 
             // godmodeBox
             // 
@@ -109,18 +86,17 @@
             this.roundUpDown.Name = "roundUpDown";
             this.roundUpDown.Size = new System.Drawing.Size(137, 27);
             this.roundUpDown.TabIndex = 4;
-            this.roundUpDown.ValueChanged += new System.EventHandler(this.roundUpDown_ValueChanged);
             // 
-            // maxRoundButton
+            // AmmoButton
             // 
-            this.maxRoundButton.Location = new System.Drawing.Point(250, 67);
-            this.maxRoundButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.maxRoundButton.Name = "maxRoundButton";
-            this.maxRoundButton.Size = new System.Drawing.Size(186, 31);
-            this.maxRoundButton.TabIndex = 6;
-            this.maxRoundButton.Text = "setMaxRound";
-            this.maxRoundButton.UseVisualStyleBackColor = true;
-            this.maxRoundButton.Click += new System.EventHandler(this.endRoundButton_Click);
+            this.AmmoButton.Location = new System.Drawing.Point(250, 67);
+            this.AmmoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AmmoButton.Name = "AmmoButton";
+            this.AmmoButton.Size = new System.Drawing.Size(186, 31);
+            this.AmmoButton.TabIndex = 6;
+            this.AmmoButton.Text = "unlimitedAmmo";
+            this.AmmoButton.UseVisualStyleBackColor = true;
+            this.AmmoButton.Click += new System.EventHandler(this.AmmoButton_Click);
             // 
             // pointsBox
             // 
@@ -133,26 +109,6 @@
             this.pointsBox.Text = "unlimited points";
             this.pointsBox.UseVisualStyleBackColor = true;
             // 
-            // secondAmmoBox
-            // 
-            this.secondAmmoBox.AutoSize = true;
-            this.secondAmmoBox.Location = new System.Drawing.Point(23, 49);
-            this.secondAmmoBox.Name = "secondAmmoBox";
-            this.secondAmmoBox.Size = new System.Drawing.Size(190, 24);
-            this.secondAmmoBox.TabIndex = 8;
-            this.secondAmmoBox.Text = "secondUnlimited ammo";
-            this.secondAmmoBox.UseVisualStyleBackColor = true;
-            // 
-            // throwablesBox
-            // 
-            this.throwablesBox.AutoSize = true;
-            this.throwablesBox.Location = new System.Drawing.Point(23, 148);
-            this.throwablesBox.Name = "throwablesBox";
-            this.throwablesBox.Size = new System.Drawing.Size(171, 24);
-            this.throwablesBox.TabIndex = 9;
-            this.throwablesBox.Text = "unlimited throwables";
-            this.throwablesBox.UseVisualStyleBackColor = true;
-            // 
             // cButton
             // 
             this.cButton.Location = new System.Drawing.Point(693, 102);
@@ -163,42 +119,39 @@
             this.cButton.UseVisualStyleBackColor = true;
             this.cButton.Click += new System.EventHandler(this.cButton_Click);
             // 
-            // button1
+            // throwableButton
             // 
-            this.button1.Location = new System.Drawing.Point(250, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 29);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "1 health zombies";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.throwableButton.Location = new System.Drawing.Point(250, 117);
+            this.throwableButton.Name = "throwableButton";
+            this.throwableButton.Size = new System.Drawing.Size(142, 29);
+            this.throwableButton.TabIndex = 11;
+            this.throwableButton.Text = "unlimited throwable";
+            this.throwableButton.UseVisualStyleBackColor = true;
+            this.throwableButton.Click += new System.EventHandler(this.throwable_Click);
             // 
-            // roundLabel
+            // freezePointsButton
             // 
-            this.roundLabel.AutoSize = true;
-            this.roundLabel.Location = new System.Drawing.Point(721, 49);
-            this.roundLabel.Name = "roundLabel";
-            this.roundLabel.Size = new System.Drawing.Size(48, 20);
-            this.roundLabel.TabIndex = 12;
-            this.roundLabel.Text = "round";
+            this.freezePointsButton.Location = new System.Drawing.Point(253, 158);
+            this.freezePointsButton.Name = "freezePointsButton";
+            this.freezePointsButton.Size = new System.Drawing.Size(94, 29);
+            this.freezePointsButton.TabIndex = 12;
+            this.freezePointsButton.Text = "freeze points";
+            this.freezePointsButton.UseVisualStyleBackColor = true;
+            this.freezePointsButton.Click += new System.EventHandler(this.freezePointsButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.roundLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.freezePointsButton);
+            this.Controls.Add(this.throwableButton);
             this.Controls.Add(this.cButton);
-            this.Controls.Add(this.throwablesBox);
-            this.Controls.Add(this.secondAmmoBox);
             this.Controls.Add(this.pointsBox);
-            this.Controls.Add(this.maxRoundButton);
+            this.Controls.Add(this.AmmoButton);
             this.Controls.Add(this.roundUpDown);
             this.Controls.Add(this.setRoundButton);
             this.Controls.Add(this.godmodeBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ammoBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -209,20 +162,15 @@
         }
 
         #endregion
-
-        private CheckBox ammoBox;
         private System.Windows.Forms.Timer timer1;
-        private Label label1;
         private CheckBox godmodeBox;
         private Button setRoundButton;
         private NumericUpDown roundUpDown;
-        private Button maxRoundButton;
+        private Button AmmoButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private CheckBox pointsBox;
-        private CheckBox secondAmmoBox;
-        private CheckBox throwablesBox;
         private Button cButton;
-        private Button button1;
-        private Label roundLabel;
+        private Button throwableButton;
+        private Button freezePointsButton;
     }
 }
